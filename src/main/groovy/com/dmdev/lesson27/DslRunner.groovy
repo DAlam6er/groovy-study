@@ -1,6 +1,7 @@
 package com.dmdev.lesson27
 
-import static com.dmdev.lesson27.DslBuilder.*
+
+import static com.dmdev.lesson27.DslBuilder.mail
 
 //def email = new Email()
 //email.setFrom("from@mail.ru")

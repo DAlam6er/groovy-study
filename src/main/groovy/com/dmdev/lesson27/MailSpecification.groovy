@@ -6,7 +6,7 @@ class MailSpecification {
     String title
     BodySpecification body
 
-    def from (String from) {
+    def from(String from) {
         this.from = from
     }
 

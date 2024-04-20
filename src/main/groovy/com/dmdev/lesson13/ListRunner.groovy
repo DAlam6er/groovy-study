@@ -57,8 +57,8 @@ class ListRunner {
         // spread-оператор * — для разбиения массива на 2 переменные
         // под капотом вызывается метод createList у класса ScriptBytecodeAdapter
         // при этом возвращается объект типа List
-        func(*[8,10])
-     }
+        func(*[8, 10])
+    }
 
     static def func(def a, def b) {
         println a

@@ -30,7 +30,7 @@ class Student implements WithId {
     def getAt(Integer index) {
         if (index == 0) {
             return firstName
-        } else if(index == 1) {
+        } else if (index == 1) {
             return lastName
         } else if (index == 2) {
             return age

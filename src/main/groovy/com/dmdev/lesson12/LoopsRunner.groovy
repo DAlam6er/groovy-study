@@ -31,7 +31,7 @@ class LoopsRunner {
 
         println "------------------------------------------"
 
-        list.size().downto(0) { println it}
+        list.size().downto(0) { println it }
 
         println "------------------------------------------"
 

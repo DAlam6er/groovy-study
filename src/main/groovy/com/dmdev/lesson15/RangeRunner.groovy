@@ -11,17 +11,17 @@ class RangeRunner {
         range = 2..<8
         assert !range.contains(8)
 
-        range.each {println it}
+        range.each { println it }
         println "-----------------------------------------------"
-        ('a'..'d').each {println it}
+        ('a'..'d').each { println it }
         println "-----------------------------------------------"
         // Enum WeekDay под капотом содержит два дополнительных метода:
         // next() и previous().
         // Их следует реализовать в классе, реализующем интерфейс Range
-        (WeekDay.MO..WeekDay.FR).each {println it}
+        (WeekDay.MO..WeekDay.FR).each { println it }
         println "-----------------------------------------------"
         // обратный порядок
-        (WeekDay.FR..WeekDay.MO).each {println it}
+        (WeekDay.FR..WeekDay.MO).each { println it }
         // Range также реализует метод isCase(), поэтому удобно использовать в switch
         // - аналог метода contains
     }

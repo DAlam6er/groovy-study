@@ -37,14 +37,15 @@ class Task3 {
 //        closure.resolveStrategy = DELEGATE_ONLY
 //        closure()
         valueHolder.with closure
-        [when : { Closure whenClosure -> {
-            valueHolder.with whenClosure
-            [then : { Closure thenClosure ->
-                thenClosure.delegate = valueHolder
-                thenClosure.resolveStrategy = DELEGATE_ONLY
-                assert thenClosure()
-            }]
-        }
+        [when: { Closure whenClosure ->
+            {
+                valueHolder.with whenClosure
+                [then: { Closure thenClosure ->
+                    thenClosure.delegate = valueHolder
+                    thenClosure.resolveStrategy = DELEGATE_ONLY
+                    assert thenClosure()
+                }]
+            }
         }]
     }
 }

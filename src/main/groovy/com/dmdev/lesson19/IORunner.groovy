@@ -9,7 +9,7 @@ class IORunner {
         // read
         println file.text
 
-        file.each {line -> println line}
+        file.each { line -> println line }
         // закрывать InputStream не нужно
         file.withInputStream {
             def allText = new String(it.readAllBytes())
@@ -18,14 +18,13 @@ class IORunner {
 
         def writer = new StringWriter() // закрывать необязательно, т.к. writer in-memory
         // закрывать Reader НУЖНО
-        try (def reader = file.newReader())
-        {
+        try (def reader = file.newReader()) {
             // запишем в writer всё содержимое reader
             writer << reader
         }
 
         // write
-        def file2 = new File ("text.txt")
+        def file2 = new File("text.txt")
         // перезаписывает полностью содержимое файла
         file2.text = "Some text"
 
@@ -37,11 +36,11 @@ class IORunner {
 
         def srcDir = new File("src")
 
-        srcDir.eachDir {println it }
+        srcDir.eachDir { println it }
         println "---------------------------------------------------"
         // рекурсивно пробегаем по всем директориям, которые есть в src
-        srcDir.eachDirRecurse {println it}
+        srcDir.eachDirRecurse { println it }
         println "---------------------------------------------------"
-        srcDir.eachFileRecurse(FileType.FILES) { println it}
+        srcDir.eachFileRecurse(FileType.FILES) { println it }
     }
 }

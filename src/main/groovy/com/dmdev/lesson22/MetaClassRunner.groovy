@@ -45,7 +45,7 @@ class MetaClassRunner {
 
         println student.metaClass  //ExpandoMetaClass
 
-        student.class.metaClass.newMethod = {int value ->
+        student.class.metaClass.newMethod = { int value ->
             println "New method in class Student, $value"
         }
 

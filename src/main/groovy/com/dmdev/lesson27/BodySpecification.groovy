@@ -8,7 +8,7 @@ class BodySpecification {
         this.text = text
     }
 
-    def images(List<String> images){
+    def images(List<String> images) {
         this.images += images
     }
 

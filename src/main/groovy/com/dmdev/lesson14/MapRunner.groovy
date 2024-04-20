@@ -5,7 +5,7 @@ class MapRunner {
         def emptyMap = [:]
         //def map = ["one" : 1, "two" : 2]
         // если ключ - это String, можем опустить кавычки
-        def map = [one : 1, two : 2]
+        def map = [one: 1, two: 2]
         assert map.getClass() == LinkedHashMap
 
         // read
@@ -24,12 +24,12 @@ class MapRunner {
 
         // new methods
         // подмножество
-        assert map.subMap("one", "two") == [one : 111, two : 2]
+        assert map.subMap("one", "two") == [one: 111, two: 2]
 
         // new operators
         // spread-оператор *:
         // добавляем в новый ассоциативный массив элементы из старого
-        def newMap = ["q" : 22, "rt" : 99, *:map]
+        def newMap = ["q": 22, "rt": 99, *: map]
         println newMap
     }
 }
