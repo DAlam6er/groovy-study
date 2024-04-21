@@ -1,9 +1,9 @@
 package com.dmdev.lesson17
 
 trait WithId {
-    Integer id
+  Integer id
 
-    boolean validateId() {
-        id > 0
-    }
+  boolean validateId() {
+    id > 0
+  }
 }

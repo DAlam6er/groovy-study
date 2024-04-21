@@ -16,12 +16,12 @@ import static com.dmdev.lesson27.DslBuilder.mail
 // метод mail возвращает MailSpecification
 // метод body возвращает BodySpecification
 mail {
-    from "from@mail.ru"
-    to "to@mail.ru"
-    title "title"
-    body {
-        text "message content"
-        images(['image.jpg', 'image2.png'])
-        image 'test.jpeg'
-    }
+  from "from@mail.ru"
+  to "to@mail.ru"
+  title "title"
+  body {
+    text "message content"
+    images(['image.jpg', 'image2.png'])
+    image 'test.jpeg'
+  }
 }

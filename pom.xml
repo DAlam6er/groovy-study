@@ -23,6 +23,11 @@
       <version>${groovy.version}</version>
       <type>pom</type>
     </dependency>
+    <!--<dependency>
+      <groupId>org.apache.groovy</groupId>
+      <artifactId>groovy-jaxb</artifactId>
+      <version>4.0.0-alpha-2</version>
+    </dependency>-->
   </dependencies>
 
   <build>

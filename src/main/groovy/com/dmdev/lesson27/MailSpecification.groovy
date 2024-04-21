@@ -1,26 +1,26 @@
 package com.dmdev.lesson27
 
 class MailSpecification {
-    String from
-    String to
-    String title
-    BodySpecification body
+  String from
+  String to
+  String title
+  BodySpecification body
 
-    def from(String from) {
-        this.from = from
-    }
+  def from(String from) {
+    this.from = from
+  }
 
-    def to(String to) {
-        this.to = to
-    }
+  def to(String to) {
+    this.to = to
+  }
 
-    def title(String title) {
-        this.title = title
-    }
+  def title(String title) {
+    this.title = title
+  }
 
-    BodySpecification body(@DelegatesTo(BodySpecification) Closure closure) {
-        body = new BodySpecification()
-        body.with closure
-        body
-    }
+  BodySpecification body(@DelegatesTo(BodySpecification) Closure closure) {
+    body = new BodySpecification()
+    body.with closure
+    body
+  }
 }
