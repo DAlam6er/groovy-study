@@ -22,7 +22,8 @@ import com.dmdev.lesson10.Person
  */
 class IteratesRunner {
   static void main(String[] args) {
-    assert [1, 4, 7, 9].any { it % 2 == 0 }  // первое попавшееся четное число
+    assert [1, 4, 7, 9].any { it % 2 == 0 }  // есть хотя бы одно чётное число
+    assert [1, 4, 7, 9].find {it % 2 == 0} == 4 // первое попавшееся четное число
     assert [1, 4, 7, 9].findAll { it % 2 != 0 } == [1, 7, 9]
     assert (2..4).collect() == [2, 3, 4]
 
@@ -35,6 +36,7 @@ class IteratesRunner {
     // pattern.matcher(elem.toString()).matches()
     // под капотом вызывается isCase
     assert ["asd", "dsf", "12", "546", "234df"].grep(~/\d+/) == ["12", "546"]
+    // у closure будет неявно вызван метод call()
     assert ["asd", "dsf", "12", "546", "234df"].grep { it.length() > 4 } == ["234df"]
   }
 }

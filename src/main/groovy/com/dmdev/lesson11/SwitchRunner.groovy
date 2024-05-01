@@ -25,6 +25,7 @@ class SwitchRunner {
     // метод содержит вызов 8 различных методов
     // т.о. байткод класса будет содержать массив CallSite[] из 9 эл-тов
     int x = 12
+    // switch statement
     switch (x) {
       case String:
         println 0                     // вызов 0-й
@@ -47,6 +48,20 @@ class SwitchRunner {
       default:
         println "None"                // вызов 7-й
         break
+    }
+
+    println '============================='
+
+    // switch expression (since Groovy 4.0)
+    println switch (x) {
+      case String -> 'string'
+      case 5 -> 'five'
+      case new Person(29) -> 'person object'
+      case ~/\d+/ -> 'some number'
+      case {it % 5 == 0} -> 'some number multiple of 5'
+      case [1, 3, 5, 8, 9] -> 'list of numbers 1, 3, 5, 8, 9'
+      case null -> 'just a null'
+      default -> "None"
     }
 
     // неявно вызывается метод isCase() у списка

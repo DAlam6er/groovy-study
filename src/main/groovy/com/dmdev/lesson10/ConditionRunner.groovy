@@ -33,7 +33,7 @@ class ConditionRunner {
     if (person) {
       println person.id()
     }
-    person?.id() // null safe
+    person?.id() // null safe operator
     println "----------------------"
     def result = x != 0 ? x : 1
     println result // 10
@@ -53,7 +53,7 @@ class ConditionRunner {
     result = x ? x : 1
     println result
     println "----------------------"
-    result = x ?: 1
+    result = x ?: 1 // elvis operator
     println result
   }
 }

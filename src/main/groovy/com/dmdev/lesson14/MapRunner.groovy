@@ -16,7 +16,8 @@ class MapRunner {
     assert map["one"] == 1
     assert map."one" == 1
     assert map.one == 1 // в случае если ключ - это String, опускаем кавычки
-    assert map.get("qwe", 10) == 10 // в Java map.getOrDefault()
+    // Если свойства не существует - используется метод invokeMissingProperty() из MetaClass
+    assert map.get("qwe", 10) == 10 // аналог map.getOrDefault() в Java
 
     // write
     // перезаписываем значение по указанному ключу

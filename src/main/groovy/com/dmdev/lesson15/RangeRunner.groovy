@@ -20,13 +20,14 @@ package com.dmdev.lesson15
  */
 class RangeRunner {
   static void main(String[] args) {
-    def range = 2..8
+    def range = 2..8 // закрытый диапазон
+    // класс, который наследуется от AbstractList<Integer> и реализует интерфейс Range<Integer>
     assert range.getClass() == IntRange
 
     assert range.get(3) == 5
     assert range.contains(8)
 
-    range = 2..<8
+    range = 2..<8 // открытый диапазон
     assert !range.contains(8)
 
     // метод содержится в DefaultGroovyMethods и добавляется динамически в runtime

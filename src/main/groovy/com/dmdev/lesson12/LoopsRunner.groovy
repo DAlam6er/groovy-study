@@ -10,46 +10,51 @@ class LoopsRunner {
     // Все нижеуказанные методы вызываются у утилитного класса DefaultGroovyMethods
     // 0..<list.size() - range [0;4) - открытый диапазон
     for (def i in 0..<list.size()) {
-      println i
+      println i // 0 1 2 3
     }
 
     println "------------------------------------------"
     // 0..list.size() - range [0;4] - закрытый диапазон
     for (i in 0..list.size()) {
-      println i
+      println i // 0 1 2 3 4
     }
 
     println "------------------------------------------"
-    // for each - не путать с неявным вызовом isCase()
+    // for each - не путать с неявным вызовом isCase() в выражении if (x in [1, 3, 6, 8, 12]) { ... }
     for (value in list) {
-      println value
+      println value // 1 2 3 4 (элементы списка)
     }
 
     println "------------------------------------------"
-    // closure
-    // статический метод из DefaultGroovyMethods.class
+    // с использованием closure
+    // статический метод из утилитного класса DefaultGroovyMethods.class
     0.upto(list.size()) { value ->
-      println value
+      println value // 0 1 2 3 4
     }
 
     println "------------------------------------------"
-    // статический метод из DefaultGroovyMethods.class
-    list.size().downto(0) { println it }
+    // с использованием closure
+    // статический метод из утилитного класса DefaultGroovyMethods.class
+    list.size().downto(0) { println it } // 4 3 2 1 0
 
     println "------------------------------------------"
     // range [0;4) - открытый диапазон
-    // статический метод из DefaultGroovyMethods.class
+    // с использованием closure
+    // статический метод из утилитного класса DefaultGroovyMethods.class
     list.size().times {
-      println it
+      println it // 0 1 2 3
     }
 
     println "------------------------------------------"
     // аналогичен 0.upto()
-    // статический метод из DefaultGroovyMethods.class
+    // с использованием closure
+    // статический метод из утилитного класса DefaultGroovyMethods.class
     0.step(5, 1) {
-      println it
+      println it // 0 1 2 3 4
     }
 
+    // с изменённым шагом
+    println "------------------------------------------"
     0.step(5, 2) {
       println it // 0, 2, 4
     }
