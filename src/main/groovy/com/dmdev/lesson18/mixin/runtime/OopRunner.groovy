@@ -1,15 +1,11 @@
-package com.dmdev.lesson18.mixin
+package com.dmdev.lesson18.mixin.runtime
 
+/**
+ * Такие mixins добавляются во время старта приложения, т.к. они глобальные для всего приложения
+ * Невозможно добавить mixin для конкретного объекта
+ */
 class OopRunner {
   static void main(String[] args) {
-    def student1 = new Student(firstName: "Petr", lastName: "Petrov", age: 18, id: 666)
-    println student1
-    println "----------------------"
-
-    // class = ... id = ... firstName = ... lastName = ... age = ...
-    student1.properties.each { println it }
-    println "----------------------"
-
     // Привнесем в класс String новый функционал из класса OopRunner
     // весь функционал, который принадлежит классу OopRunner,
     // т.е. все его статические методы, будут добавлены в класс String

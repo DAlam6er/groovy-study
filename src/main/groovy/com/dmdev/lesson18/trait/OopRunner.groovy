@@ -11,12 +11,15 @@ class OopRunner {
     println student2
 
     println "----------------------"
+
+    // под капотом метод Map getProperties(Object self) класса DefaultGroovyMethods
+    // который использует Groovy Reflection API
+    student1.properties.each { println it }
     // firstName = Petr
     // lastName = Petrov
     // age = 18
     // com_dmdev_lesson18_trait_WithId__id=666
     // class=class com.dmdev.lesson18.trait.Student
     // id = 666
-    student1.properties.each { println it }
   }
 }
