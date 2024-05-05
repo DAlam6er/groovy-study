@@ -2,7 +2,7 @@ package com.dmdev.lesson24
 
 import com.dmdev.lesson17.Student
 
-@Category(Student.class)
+@Category(Student.class) // какой класс хотим изменить
 class DefaultStudentMethods {
 
   def testStr() {
