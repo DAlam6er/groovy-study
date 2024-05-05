@@ -2,11 +2,15 @@ package com.dmdev.lesson19
 
 import groovy.io.FileType
 
+/**
+ * В Groovy принято использовать uncatched exceptions. Не нужно ничего отлавливать,
+ * только программист решает, нужно ли ему в каком-то месте использовать try-catch
+ */
 class IORunner {
   static void main(String[] args) {
     def file = new File(".gitignore")
 
-    // read
+    // read (нет необходимости открывать/закрывать поток InputStream)
     println file.text
 
     file.each { line -> println line }
@@ -31,7 +35,7 @@ class IORunner {
     // для записи в режиме добавление:
     file2 << "New line" << System.lineSeparator()
 
-//        file2.withOutputStream {}
+//        file2.withOutputStream {} // закрывать не нужно
 //        try(def stream = file2.newOutputStream()) {}
 
     def srcDir = new File("src")
