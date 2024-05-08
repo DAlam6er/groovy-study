@@ -10,6 +10,7 @@ class DefaultStudentMethods {
     println "$age, $firstName"
   }
 
+  // первый параметр - объект, у которого был вызван метод
   static def anotherMethod(Student self, String value) {
     println "$self, args: $value"
   }

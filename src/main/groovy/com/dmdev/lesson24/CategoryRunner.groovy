@@ -12,7 +12,11 @@ class CategoryRunner {
     // всех объектов внутри блока Closure
     // После выхода из блока Closure - удаляются из metaClass
     use(DefaultStudentMethods.class) {
-      student.testStr()
+      // в байткоде:
+      // final Reference student =
+      //   new Reference(Student.class.init<invokedynamic>(
+      //     Student.class, ScriptBytecodeAdapter.createMap(new Object[]{"age", 18, "firstName", "Ivan"})));
+      student.testStr() // статический метод
       student.anotherMethod("Test arg")
     }
   }
