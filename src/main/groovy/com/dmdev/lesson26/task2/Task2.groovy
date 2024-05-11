@@ -11,10 +11,24 @@ class Task2 {
     thirdOption()
   }
 
-  // Более глобальный вариант
+  /**
+   * Решение задачи с помощью категорий
+   */
+  private static void firstOption() {
+    use(IntegerMethods) {
+      def result = 3.cm + 1.m - 25.mm
+      assert result == 1005
+    }
+  }
+
+  /**
+   * Более глобальный вариант - через метаклассы - добавляем в класс Integer
+   * 3 новых метода
+   */
   private static void secondOption() {
     Integer.metaClass.getCm = {
-      delegate * 10
+//      this * 10 // thisObject - Task2
+      delegate * 10 // delegate относится к тому объекту, у которого вызвали метод getCm
     }
 
     Integer.metaClass.getM = {
@@ -24,13 +38,16 @@ class Task2 {
     Integer.metaClass.getMm = {
       delegate
     }
+
     def result = 3.cm + 1.m - 25.mm
     assert result == 1005
   }
 
-  // Второй вариант, но с более компактной записью
-  // используется статический метод класса DefaultGroovyMethods
-  // static MetaClass metaClass(Class self, Closure closure)
+  /**
+   * Второй вариант, но с более компактной записью
+   * используется статический метод класса DefaultGroovyMethods
+   * static MetaClass metaClass(Class self, Closure closure)
+   */
   private static void thirdOption() {
     Integer.metaClass {
       getCm = {
@@ -43,14 +60,8 @@ class Task2 {
         delegate
       }
     }
+
     def result = 3.cm + 1.m - 25.mm
     assert result == 1005
-  }
-
-  private static void firstOption() {
-    use(IntegerMethods) {
-      def result = 3.cm + 1.m - 25.mm
-      assert result == 1005
-    }
   }
 }

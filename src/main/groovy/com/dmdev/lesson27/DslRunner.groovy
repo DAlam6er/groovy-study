@@ -7,7 +7,7 @@ import static com.dmdev.lesson27.DslBuilder.mail
 //email.setFrom("from@mail.ru")
 //email.setTo("to@gmail.ru")
 //email.setTitle("title")
-//
+
 //def body = new EmailBody()
 //body.setText("message content")
 //body.setImages(List.of("image.jpg"))

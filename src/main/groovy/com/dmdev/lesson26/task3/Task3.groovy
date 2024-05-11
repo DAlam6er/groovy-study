@@ -37,8 +37,7 @@ class Task3 {
 //        closure.resolveStrategy = DELEGATE_ONLY
 //        closure()
     valueHolder.with closure
-    [when: { Closure whenClosure ->
-      {
+    [when: { Closure whenClosure -> {
         valueHolder.with whenClosure
         [then: { Closure thenClosure ->
           thenClosure.delegate = valueHolder

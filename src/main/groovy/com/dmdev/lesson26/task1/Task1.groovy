@@ -17,7 +17,7 @@ class Task1 {
     Class.metaClass.make = { Object[] values ->
       println thisObject
       println owner
-      println delegate
+      println delegate  // import!
 
       // будем использовать delegate, а не owner или thisObject,
       // т.к. когда мы подправляем метакласс,
